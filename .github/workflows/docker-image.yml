@@ -5,7 +5,8 @@ on:
     branches: [ "main" ]
   pull_request:
     branches: [ "main" ]
-
+  schedule:
+    - cron: '0 */6 * * *'
 jobs:
 
   build:
@@ -15,4 +16,4 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag my-image-name:$(date +%s)
+      run: sudo apt update && sudo apt install git curl python3-pip ffmpeg -y && pip3 install -U pip && pip3 install -U -r requirements.txt && python3 genStr.py
