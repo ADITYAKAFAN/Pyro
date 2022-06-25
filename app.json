@@ -1,0 +1,35 @@
+{
+    "name": "Alexstringgenbot",
+    "description": "A bot for Generating String Session of Telegram Account mostly for Userbots.",
+    "logo": "https://telegra.ph/file/f1cf1598c79fd805c60dd.jpg",
+    "keywords": [
+        "python",
+        "telegram"
+    ],
+    "buildpacks": [{
+    "url": "heroku/python"
+  }],
+    "formation": {
+        "worker": {
+            "quantity": 1,
+            "size": "free"
+        }
+    },
+    "env": {
+        "BOT_TOKEN": {
+            "description": "Your bot token, as a string.",
+            "value": "",
+            "required": true
+        },
+        "API_ID": {
+            "description": "Get from https://my.telegram.org",
+            "value": "",
+            "required": true
+        },
+        "API_HASH": {
+            "description": "Get from https://my.telegram.org",
+            "value": "",
+            "required": true
+        }
+    }
+}
